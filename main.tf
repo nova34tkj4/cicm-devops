@@ -1,4 +1,3 @@
-####################
 provider "google" {
   project     = var.project
   region      = var.region
@@ -12,7 +11,7 @@ resource "google_compute_instance" "my_instance" {
 
   boot_disk {
     initialize_params {
-      image = var.image
+      image = var.images
     }
   }
 
@@ -21,5 +20,5 @@ resource "google_compute_instance" "my_instance" {
     access_config {}
   }
 
-  tags = ["web", "dev"]
+  tags = ["web", "prod"]
 }
